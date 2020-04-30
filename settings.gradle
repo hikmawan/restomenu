@@ -1,0 +1,2 @@
+rootProject.name='Resto Menu'
+include ':app'
