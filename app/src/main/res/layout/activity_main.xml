@@ -9,6 +9,11 @@
     tools:context=".MainActivity">
 
     <GridView
+        android:id="@+id/gvListFood"
+         android:columnWidth="64pt"
+        android:numColumns="auto_fit"
+        android:horizontalSpacing="5pt"
+        android:verticalSpacing="5pt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
