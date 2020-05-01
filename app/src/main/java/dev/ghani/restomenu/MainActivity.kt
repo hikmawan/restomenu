@@ -1,6 +1,7 @@
 package dev.ghani.restomenu
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -42,6 +43,13 @@ class MainActivity : AppCompatActivity() {
             var inflator = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var foodView = inflator.inflate(R.layout.food_card,null)
             foodView.ivFoodImage.setImageResource(food.image!!)
+            foodView.llItem.setOnClickListener{
+                val intent = Intent(context,FoodDetails::class.java)
+                intent.putExtra("name",food.name!!)
+                intent.putExtra("des",food.des!!)
+                intent.putExtra("image",food.image!!)
+                context!!.startActivity(intent)
+            }
             foodView.tvName.text = food.name!!
             return foodView
         }
